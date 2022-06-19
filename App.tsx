@@ -73,28 +73,29 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <StatusBar style="auto" />
-        <Text style={{ textAlign: "center", marginTop: 40 }}>
-          Выберите билет
-        </Text>
+        <View style={styles.titleView}>
+          <Text style={styles.title}>Выберите билет</Text>
+        </View>
         <CalendarStrip
           style={styles.calendar}
           onDateSelected={(date) => handleDateSelected(date)}
           scrollable
           calendarAnimation={{ type: "sequence", duration: 30 }}
           daySelectionAnimation={{
-            type: "border",
+            type: "background",
             duration: 200,
-            borderWidth: 1,
-            borderHighlightColor: "white",
+            highlightColor: "#25B0FF",
           }}
-          calendarHeaderStyle={{ color: "white" }}
-          calendarColor={"#86828d"}
-          dateNumberStyle={{ color: "white" }}
-          dateNameStyle={{ color: "white" }}
-          highlightDateNumberStyle={{ color: "yellow" }}
-          highlightDateNameStyle={{ color: "yellow" }}
+          calendarHeaderStyle={{ color: "black" }}
+          // calendarColor={"#86828d"}
+          dateNumberStyle={{ color: "black" }}
+          dateNameStyle={{ color: "black" }}
+          highlightDateNumberStyle={{ color: "white" }}
+          highlightDateNameStyle={{ color: "white" }}
+          highlightDateContainerStyle={{ backgroundColor: "#25B0FF" }}
           disabledDateNameStyle={{ color: "grey" }}
           disabledDateNumberStyle={{ color: "grey" }}
+          dayContainerStyle={{ backgroundColor: "white" }}
           startingDate={moment()}
         />
         {date && <Text style={styles.date}>{date}</Text>}
